@@ -18,6 +18,5 @@ void TitleScene::Update(const char* preKeys, const char* keys) {
 void TitleScene::Draw() {
 
 	Novice::DrawSprite(0, 0, TitleTexture, 1.0f, 1.0f, 0.0f, 0xFFFFFFFF);
-    Novice::ScreenPrintf(0, 0, "Scene:%d", 0);
 }
 

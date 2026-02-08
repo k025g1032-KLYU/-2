@@ -34,5 +34,4 @@ void ResultScene::Draw() {
     else if(context->score==1){
         Novice::DrawSprite(0, 0, winTexture, 1.0f, 1.0f, 0.0f, 0xFFFFFFFF);
 	}
-    Novice::ScreenPrintf(0, 0, "Scene:%d", 2);
 }

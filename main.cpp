@@ -7,7 +7,7 @@
 #include "ResultScene.h"
 #include "Context.h"
 
-const char kWindowTitle[] = "GC1A_11_ヨ_カンリン_タイトル";
+const char kWindowTitle[] = "GC1A_11_ヨ_カンリン_輝く宇宙へ";
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {

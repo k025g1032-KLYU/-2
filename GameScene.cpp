@@ -32,7 +32,7 @@ void GameScene::Update(const char* preKeys, const char* keys) {
         enemy_[i].Update();
         
     }
-    player_.Update(keys);
+    player_.Update(keys, preKeys);
     for(int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 10; j++)
@@ -41,13 +41,13 @@ void GameScene::Update(const char* preKeys, const char* keys) {
         }
 	}
    
-    if (context->score >= 25)
+    if (context->score >= 40)
     {
         context->score = 1;
         nextScene = SceneType::Result;
         Novice::StopAudio(playgameMusic);
     }
-    else if(context->score <=-25)
+    else if(context->score <=-15)
     {
         context->score = 0;
         nextScene = SceneType::Result;
@@ -58,7 +58,6 @@ void GameScene::Update(const char* preKeys, const char* keys) {
 void GameScene::Draw() {
 	Novice::DrawSprite(0, BGY, BGTexture, 1.0f, 1.0f, 0.0f, WHITE);
 	Novice::DrawSprite(0, BGY-720, BGTexture, 1.0f, 1.0f, 0.0f, WHITE);
-    Novice::ScreenPrintf(0, 0, "Scene:%d", 1);
     for (int i = 0; i < 5; i++)
     {
         enemy_[i].Draw();

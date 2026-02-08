@@ -12,7 +12,7 @@ Player::~Player()
 {
 }
 
-void Player::Update( const char* keys)
+void Player::Update(const char* keys, const char* preKeys)
 {
 	playerTextureFrame++;
 	if(playerTextureFrame > 19)
@@ -20,22 +20,78 @@ void Player::Update( const char* keys)
 		playerTextureFrame = 0;
 	}
 	
-	if(keys[DIK_A]) 
+	if(keys[DIK_A] || keys[DIK_LEFT])
 	{
-		pos_.x -= spd_;
+		if (vel_.x >= -spd_)
+		{
+			vel_.x -= 1;
+		}
+		if(keys[DIK_LSHIFT]&&!preKeys[DIK_LSHIFT])
+		{
+			vel_.x -= 10;
+		}
 	}
-	if(keys[DIK_D]) 
+	if(keys[DIK_D] || keys[DIK_RIGHT])
 	{
-		pos_.x += spd_;
+		if (vel_.x <= spd_)
+		{
+			vel_.x += 1;
+		}
+		if (keys[DIK_LSHIFT] && !preKeys[DIK_LSHIFT])
+		{
+			vel_.x += 10;
+		}
 	}
-	if(keys[DIK_W]) 
+	if(keys[DIK_W] || keys[DIK_UP])
 	{
-		pos_.y -= spd_;
+		if (vel_.y >= -spd_)
+		{
+			vel_.y -= 1;
+		}
+		if (keys[DIK_LSHIFT] && !preKeys[DIK_LSHIFT])
+		{
+			vel_.y -= 10;
+		}
 	}
-	if(keys[DIK_S]) 
+	if(keys[DIK_S]||keys[DIK_DOWN])
 	{
-		pos_.y += spd_;
+		if (vel_.y <= spd_)
+		{
+			vel_.y += 1;
+		}
+		if (keys[DIK_LSHIFT] && !preKeys[DIK_LSHIFT])
+		{
+			vel_.y += 10;
+		}
 	}
+
+	if(vel_.y> 0.1)
+	{
+		vel_.y -= 0.1f;
+	}
+	else if(vel_.y<-0.1)
+	{
+		vel_.y += 0.1f;
+	}
+	else
+	{
+		vel_.y = 0;
+	}
+
+	if(vel_.x> 0.1)
+	{
+		vel_.x -= 0.1f;
+	}
+	else if(vel_.x<-0.1)
+	{
+		vel_.x += 0.1f;
+	}
+	else
+	{
+		vel_.x = 0;
+	}
+	pos_.y += vel_.y;
+	pos_.x += vel_.x;
 
 	if(pos_.x < (float)size_/2)
 	{
@@ -93,6 +149,7 @@ void Player::Draw()
 	Novice::DrawSpriteRect(static_cast<int>(pos_.x) - size_ / 2,
 		static_cast<int>(pos_.y) - size_ / 2, 0 + size_ * (playerTextureFrame/5), 0, size_, size_, playerTexture, 0.25f, 1.0f, 0.0f, WHITE);
 
+	Novice::ScreenPrintf(0, 0, "X:%f Y:%f XV:%f YV:%f", pos_.x, pos_.y, vel_.x, vel_.y);
 	/*Novice::DrawBox(static_cast<int>(pos_.x) - size_ / 2,
 		static_cast<int>(pos_.y) - size_ / 2,
 		size_,
