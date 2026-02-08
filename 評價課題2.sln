@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "評價課題2", "評價課題2.vcxproj", "{8766F38A-3611-4F18-81D6-AE8B87535A96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Develop|x64 = Develop|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8766F38A-3611-4F18-81D6-AE8B87535A96}.Debug|x64.ActiveCfg = Debug|x64
+		{8766F38A-3611-4F18-81D6-AE8B87535A96}.Debug|x64.Build.0 = Debug|x64
+		{8766F38A-3611-4F18-81D6-AE8B87535A96}.Develop|x64.ActiveCfg = Develop|x64
+		{8766F38A-3611-4F18-81D6-AE8B87535A96}.Develop|x64.Build.0 = Develop|x64
+		{8766F38A-3611-4F18-81D6-AE8B87535A96}.Release|x64.ActiveCfg = Release|x64
+		{8766F38A-3611-4F18-81D6-AE8B87535A96}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5ECD182B-2351-4AFC-BB0D-8EBCD18EE4B5}
+	EndGlobalSection
+EndGlobal
